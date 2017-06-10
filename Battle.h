@@ -1,6 +1,0 @@
-#ifndef BATTLE_H_INCLUDED
-#define BATTLE_H_INCLUDED
-
-
-
-#endif // BATTLE_H_INCLUDED
