@@ -1,14 +1,12 @@
-
-#include "Game.cpp"
-#include "player.cpp"
-
-
-
-using namespace std;
+#include "Game.h"
 
 int main()
 {
     Game game;
 
+
+
     return 0;
 }
+
+

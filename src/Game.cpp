@@ -1,21 +1,20 @@
 #include <string>
-#include <iostream>
 #include <stdlib.h>
 #include <unistd.h>
 #include "Player.h"
 #include "Game.h"
 
-
 using namespace std;
 
 Game::Game()
 {
+
     do
     {
         mainMenu = true;
         cout << "1 - Play\n";
         cout << "2 - Quit\n";
-        cout << "Waehlen Sie 1 oder 2: ";
+        cout << "Choose 1 or 2: ";
         char menuInput;
         cin >> menuInput;
 
@@ -38,6 +37,7 @@ Game::Game()
 
 void Game::play()
 {
+
     cout << "Wie soll ihre Spielfigur heissen? ";
     string playerName;
     cin >> playerName;
@@ -55,6 +55,7 @@ void Game::play()
         cout << "Please chose your class: ";
         char cl;
         cin >> cl;
+
 
         if(cl == 'W')
         {
@@ -85,5 +86,28 @@ void Game::play()
     while(isInClassSelection);
 
     cout << "Das Spiel startet jetzt..." << endl;
+
+    turn(cin);
+
     sleep(2);
+
 }
+
+void Game::turn(istream& stream)
+{
+    int i;
+
+    do
+    {
+        cout << "(1)Next turn" << endl;
+        cout << "(2)Inventory" << endl;
+        cout << "(3)Status" << endl;
+        cout << "(4)Save Game" << endl;
+        cout << "(5)Quit Game" << endl;
+        stream >> i;
+
+    }
+    while(i != 0 && i < 5);
+
+}
+

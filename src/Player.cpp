@@ -1,10 +1,12 @@
 #include "Player.h"
 #include <unistd.h>
 #include <time.h>
-#include <string>
+#include <iostream>
+#include <stdlib.h>
 
+using namespace std;
 
-Player::Player(const std::string& name)
+Player::Player(const string& name)
 {
     Player::setName(name);
 
@@ -12,15 +14,15 @@ Player::Player(const std::string& name)
 
 Player::~Player()
 {
-    std::cout << "Destruktor Aufruf für den Spieler " << getName() << std::endl;
+    cout << "Destruktor Aufruf für den Spieler " << getName() << endl;
 }
 
-std::string Player::getName() const
+string Player::getName() const
 {
     return playerName;
 }
 
-void Player::setName(std::string name)
+void Player::setName(string name)
 {
     playerName = name;
 }
@@ -71,18 +73,18 @@ void Player::move()
     int length = rand() % 20 + 7;
     for(int i=1; i<length; i++)
     {
-        std::cout << "|";
+        cout << "|";
         sleep(1);
     }
 }
 
 void Player::displayStatus()
 {
-    std::cout << "Name: " << getName() << std::endl;
-    std::cout << "Current Level: " << getLevel() << std::endl;
-    std::cout << "Strength: " << getStrength() << std::endl;
-    std::cout << "Intelligence " << getIntelligence() << std::endl;
-    std::cout << "Agility: " << getAgility() << std::endl;
+    cout << "Name: " << getName() << std::endl;
+    cout << "Current Level: " << getLevel() << std::endl;
+    cout << "Strength: " << getStrength() << std::endl;
+    cout << "Intelligence " << getIntelligence() << std::endl;
+    cout << "Agility: " << getAgility() << std::endl;
 }
 
 
